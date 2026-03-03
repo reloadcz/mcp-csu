@@ -1,7 +1,7 @@
 # mcp-csu
 
 MCP server for the Czech Statistical Office (ČSÚ) DataStat API.
-Single-file Python server (`server.py`), runs via `uv run server.py`.
+Single-file Python server (`mcp_csu/server.py`), runs via `uvx mcp-csu`.
 
 ## For AI agents using this MCP server
 
@@ -130,7 +130,7 @@ Dataset (sada)          — raw multidimensional data, code like RSO01
 
 ## For developers modifying this server
 
-- `server.py` — single file, all code. PEP 723 inline deps.
+- `mcp_csu/server.py` — single file, all code. Published to PyPI as `mcp-csu`.
 - Upstream APIs: Catalog (`katalog/v1`), Data (`dotaz/v1`)
 - OpenAPI specs: `https://data.csu.gov.cz/api/{katalog,dotaz}/v1/api-docs`
 - Catalog API ignores `start`/`pocet` pagination params — always returns full list. Pagination is client-side.

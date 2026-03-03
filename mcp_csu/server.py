@@ -1,17 +1,7 @@
-# /// script
-# requires-python = ">=3.10"
-# dependencies = [
-#     "mcp>=1.0.0",
-#     "httpx>=0.27.0",
-# ]
-# ///
-"""mcp-csu: MCP server for Czech Statistical Office (ČSÚ) DataStat API.
+"""MCP server for Czech Statistical Office (ČSÚ) DataStat API.
 
 Provides AI assistants with access to 700+ statistical datasets
 about the Czech Republic via data.csu.gov.cz.
-
-Usage:
-    uv run server.py
 """
 
 import asyncio
@@ -630,5 +620,9 @@ async def get_dataset_metadata(dataset_code: str, version: str) -> str:
     return "\n".join(lines)
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()

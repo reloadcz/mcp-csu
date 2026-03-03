@@ -2,7 +2,7 @@
 
 MCP server for the [Czech Statistical Office](https://www.czso.cz/) (ČSÚ / CZSO) [DataStat API](https://data.csu.gov.cz/). Gives AI assistants direct access to 700+ statistical datasets about the Czech Republic — population, economy, prices, wages, employment, industry, agriculture, trade, tourism, environment, and more.
 
-Single Python file. Zero installation on the host — just `uv run`.
+Single Python file. No cloning required — just `uvx mcp-csu`.
 
 ## Features
 
@@ -19,14 +19,6 @@ Single Python file. Zero installation on the host — just `uv run`.
 
 That's it. Python and all dependencies are managed automatically by `uv`.
 
-## Installation
-
-No installation required. The server is a single file with [PEP 723](https://peps.python.org/pep-0723/) inline metadata — `uv run` handles everything:
-
-```sh
-uv run server.py
-```
-
 ## Configuration
 
 ### Claude Code
@@ -37,8 +29,8 @@ Add to `~/.claude/settings.json`:
 {
   "mcpServers": {
     "csu": {
-      "command": "uv",
-      "args": ["run", "/absolute/path/to/server.py"]
+      "command": "uvx",
+      "args": ["mcp-csu"]
     }
   }
 }
@@ -52,8 +44,8 @@ Add to `claude_desktop_config.json`:
 {
   "mcpServers": {
     "csu": {
-      "command": "uv",
-      "args": ["run", "/absolute/path/to/server.py"]
+      "command": "uvx",
+      "args": ["mcp-csu"]
     }
   }
 }
@@ -64,7 +56,7 @@ Add to `claude_desktop_config.json`:
 The server uses **stdio** transport (default). Launch command:
 
 ```
-uv run /absolute/path/to/server.py
+uvx mcp-csu
 ```
 
 ## Data model
